@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
-
-class Form extends React.Component {
+class Forms extends React.Component {
   // carfull how you write the props constructor
   constructor(props) {
     super(props);
@@ -20,26 +19,28 @@ class Form extends React.Component {
       let newData = locResult.data[0];
       console.log(newData);
       this.props.update(newData);
+      this.props.showValue(this.state.show)
     } catch {
       this.setState({
         show:true,
       });
 
-      this.props.showValue(!(this.state.show))
+      this.props.showValue(this.state.show)
+      // console.log(this.state.show);
     }
   };
 
   render() {
     return (
-      <dive>
+      <div className='formComponent' >
         <form onSubmit={this.handlSubmition}>
           <input type="text" placeholder="city name" name="searchQuery" />
           <input type="submit" value="Explore" />
         </form>
         {this.state.show && <p>Error Status Code: 400</p>}
-      </dive>
+      </div>
     );
   }
 }
 
-export default Form;
+export default Forms;
