@@ -1,13 +1,15 @@
 import React from "react";
-import Form from "./Component/Form";
+import Forms from "./Component/Forms";
 import CityRande from "./Component/CityRande";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       cityData: "",
-      show:'',
+      showFlage:false,
     };
   }
   updateData = (newCityData) => {
@@ -17,16 +19,18 @@ class App extends React.Component {
   };
   show=(showValue)=>{
     this.setState({
-      show:showValue
+      showFlage:!showValue
     })
   }
 
+  
+
   render() {
     return (
-      <dive>
-        <Form showValue={this.show} update={this.updateData} />
-        <CityRande showMapValue={this.state.show} cityData={this.state.cityData} />
-      </dive>
+      <div className='mainPage' >
+        <Forms showValue={this.show} update={this.updateData} />
+        <CityRande mapShowValue={this.state.showFlage} cityData={this.state.cityData} />
+      </div>
     );
   }
 }
