@@ -14,21 +14,33 @@ class Forms extends React.Component {
     let cityName = event.target.searchQuery.value;
     let key = "pk.0dce802ef0a078f73c16f0a005962190";
     let locURL = `https://us1.locationiq.com/v1/search.php?key=${key}&q=${cityName}&format=json`;
+    
     try {
       let locResult = await axios.get(locURL);
-      let newData = locResult.data[0];
-      console.log(newData);
+      var newData = locResult.data[0];
+      // let wetherURL = `http://localhost:3002/weather?cityLat=${31.5159996}&cityLon=${34.4289168}`;   
+      let wetherURL = `http://localhost:3002/weather?cityLat=${newData.lat}&cityLon=${newData.lon}`;   
+      let weatherResult=await axios.get(wetherURL);
+      // console.log(weatherResult.data);
+      
+      // console.log(newData.lat);
       this.props.update(newData);
-      this.props.showValue(this.state.show)
+      this.props.showValue(false);
+      this.props.weatherFunction(weatherResult.data.citywither);
+      console.log(weatherResult.data.citywither);
     } catch {
       this.setState({
         show:true,
       });
-
-      this.props.showValue(this.state.show)
-      // console.log(this.state.show);
+      
+      
+      this.props.showValue(true);
     }
   };
+  handl=()=>{
+
+  }
+
 
   render() {
     return (
