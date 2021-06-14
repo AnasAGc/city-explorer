@@ -19,14 +19,13 @@ class Forms extends React.Component {
       let newData = locResult.data[0];
       console.log(newData);
       this.props.update(newData);
-      this.props.showValue(this.state.show)
+      this.props.showValue(false);
     } catch {
       this.setState({
         show:true,
       });
 
-      this.props.showValue(this.state.show)
-      // console.log(this.state.show);
+      this.props.showValue(true);
     }
   };
 
