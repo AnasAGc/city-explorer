@@ -11,7 +11,7 @@ class App extends React.Component {
     this.state = {
       cityData: "",
       showFlage:false,
-      weatherData:''
+      weatherData:[]
     };
   }
   updateData = (newCityData) => {
@@ -28,6 +28,7 @@ class App extends React.Component {
     this.setState({
       weatherData:weatherData
     })
+    console.log(weatherData);
   }
 
   

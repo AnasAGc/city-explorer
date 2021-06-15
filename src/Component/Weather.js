@@ -3,22 +3,35 @@ import React from 'react';
 
 
 class Weather extends React.Component{
-    constructor(props){
-        super(props)
-        this.state={
-
-        }
-    }
+   
 
     render(){
         return(
           <div>
-              <p> {this.props.cityWatherData.city_name}</p>
-              <p> {this.props.cityWatherData.description}</p>
-              
+             {
+                 this.props.cityWatherData.map((item)=>{
+                    return(
+
+                        <div>
+
+
+                            {<p> Description: The temprture  {item.temp} with {item.description}   </p>}
+                            {<p> Date: {item.data}</p>}
+                            </div>
+
+                    )
+                    
+                 })
+             }
+
           </div>
         )
     }
 }
 
 export default Weather;
+
+
+// <p> {this.props.cityWatherData[0].data }</p>
+// <p> {this.props.cityWatherData.description}</p>
+
