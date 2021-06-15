@@ -18,8 +18,10 @@ class Forms extends React.Component {
     try {
       let locResult = await axios.get(locURL);
       var newData = locResult.data[0];
-      // let wetherURL = `http://localhost:3002/weather?cityLat=${31.5159996}&cityLon=${34.4289168}`;   
-      let wetherURL = `http://localhost:3002/weather?cityLat=${newData.lat}&cityLon=${newData.lon}`;   
+      // let wetherURL = `https://weather-city5.herokuapp.com/cityLat=${31.5159996}&cityLon=${34.4289168}`;   
+      // let wetherURL = `http://localhost:3002/weather?cityLat=${newData.lat}&cityLon=${newData.lon}`;   
+
+      let wetherURL = `https://weather-city5.herokuapp.com/weather?cityLat=${newData.lat}&cityLon=${newData.lon}`;   
       let weatherResult=await axios.get(wetherURL);
       // console.log(weatherResult.data);
       
