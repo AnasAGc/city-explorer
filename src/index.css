@@ -16,7 +16,7 @@ code {
 *{
   text-align: center;
 }
-p{
+/* p{
   padding: 10px;
   width: 100%;
   border: 1px solid gray;
@@ -25,4 +25,4 @@ p{
 p:first-child{
   display: inline-block;
   margin-top: 10px;
-}
+} */

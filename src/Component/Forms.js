@@ -25,12 +25,17 @@ class Forms extends React.Component {
       let wetherURL = `https://weather-city5.herokuapp.com/weatherForcast?cityLat=${newData.lat}&cityLon=${newData.lon}`;   
       let weatherResult=await axios.get(wetherURL);
       // console.log(weatherResult.data);
-      
       // console.log(newData.lat);
+
+      let moviesUrl=`https://weather-city5.herokuapp.com/movies?cityName=${cityName}`
+      let moviesResult=await axios.get(moviesUrl);
+
+      // console.log(moviesResult.data);
       this.props.update(newData);
       this.props.showValue(false);
       this.props.weatherFunction(weatherResult.data);
-      // console.log(weatherResult.data.citywither);
+      this.props.moviesFunction(moviesResult.data);
+      // console.log(newData.display_name.split(',')[0]);
     } catch {
       this.setState({
         show:true,
