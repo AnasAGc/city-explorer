@@ -20,16 +20,17 @@ class Forms extends React.Component {
       var newData = locResult.data[0];
       // let wetherURL = `https://weather-city5.herokuapp.com/cityLat=${31.5159996}&cityLon=${34.4289168}`;   
       // let wetherURL = `http://localhost:3002/weather?cityLat=${newData.lat}&cityLon=${newData.lon}`;   
+      //http://localhost:3002/weatherForcast?cityLat=31.5159996&cityLon=34.4289168
 
-      let wetherURL = `https://weather-city5.herokuapp.com/weather?cityLat=${newData.lat}&cityLon=${newData.lon}`;   
+      let wetherURL = `https://weather-city5.herokuapp.com/weatherForcast?cityLat=${newData.lat}&cityLon=${newData.lon}`;   
       let weatherResult=await axios.get(wetherURL);
       // console.log(weatherResult.data);
       
       // console.log(newData.lat);
       this.props.update(newData);
       this.props.showValue(false);
-      this.props.weatherFunction(weatherResult.data.citywither);
-      console.log(weatherResult.data.citywither);
+      this.props.weatherFunction(weatherResult.data);
+      // console.log(weatherResult.data.citywither);
     } catch {
       this.setState({
         show:true,
