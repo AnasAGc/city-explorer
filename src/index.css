@@ -18,11 +18,12 @@ code {
   flex-direction: row;
 }
 .cityInfoComponent{
- 
+  flex-shrink: 0;
+
 }
 .table_weather{
-  
-  flex-shrink: 1;
+  text-align: center;
+  flex-shrink: 10;
 
 }
 
