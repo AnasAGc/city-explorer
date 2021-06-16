@@ -6,6 +6,7 @@ class WeatherDay extends React.Component {
     return (
       <Table className="table_weather" striped bordered hover variant="white">
         {this.props.show &&<thead>
+          
           <tr>
             <th>Date</th>
             <th>Temprture</th>

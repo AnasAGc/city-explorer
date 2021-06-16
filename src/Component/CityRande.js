@@ -19,23 +19,23 @@ class CityRande extends React.Component {
   render() {
     return (
       <div className={"cityInfoComponent"}>
+        {this.props.mapShowValue && (
+          <Figure.Caption>
+            <Alert variant="success ">
+              {this.props.cityData.display_name}
+            </Alert>
+          </Figure.Caption>
+        )}
         <Figure>
           {this.props.mapShowValue && (
             <Figure.Image
-              width={500}
-              height={500}
+              width={800}
+              height={800}
               alt="171x180"
               src={`https://maps.locationiq.com/v3/staticmap?key=pk.43fed3791d35ddb76aa14f749c6d3080&center=${this.props.cityData.lat},${this.props.cityData.lon} `}
             />
           )}
 
-          {this.props.mapShowValue && (
-            <Figure.Caption>
-              <Alert variant="success ">
-                {this.props.cityData.display_name}
-              </Alert>
-            </Figure.Caption>
-          )}
         </Figure>
       </div>
     );
