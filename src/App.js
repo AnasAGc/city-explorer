@@ -36,21 +36,30 @@ updatMovies=(update)=>{
     this.setState({
       moviesData:update
     })
-    console.log(update);
+    console.log(this.state.showFlage);
   }
   
   
 
   render() {
     return (
-      <div className='mainPage' >
+      <div  >
         <Forms moviesFunction={this.updatMovies} weatherFunction={this.updatWeather} showValue={this.show} update={this.updateData} />
+        <div className={'down_header'} >
         <CityRande mapShowValue={this.state.showFlage} cityData={this.state.cityData} />
-        <Weather cityWatherData={this.state.weatherData} />
+        <Weather show={this.state.showFlage} cityWatherData={this.state.weatherData} />
+        </div>
         <Movies data={this.state.moviesData} />
-      </div>
+
+
+            </div>
+
     );
   }
 }
 
 export default App;
+
+
+
+
