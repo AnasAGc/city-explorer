@@ -1,30 +1,12 @@
 import React from "react";
+import Movie from "./Movie";
+
 class Movies extends React.Component {
   
   
     render(){
         return(
-            <div>
-                  {
-                 this.props.data.map((item)=>{
-                    return(
-
-                        <div>
-
-
-                            {<p>  {item.title}   </p>}
-                            {<p> {item.overview}</p>}
-                            {<p> {item.averageVotes}</p>}
-                            {<p> {item.popularity}</p>}
-                            {<p> {item.totalVotes}</p>}
-
-                            </div>
-
-                    )
-                    
-                 })
-             }
-            </div>
+           <Movie data={this.props.data}/>
         )
     }
 }   
