@@ -30,7 +30,7 @@ class Forms extends React.Component {
 
       let moviesUrl = `https://weather-city5.herokuapp.com/movies?cityName=${cityName}`;
       let moviesResult = await axios.get(moviesUrl);
-
+      
       this.props.update(newData);
       this.props.showValue(false);
       this.props.weatherFunction(weatherResult.data);
@@ -46,8 +46,8 @@ class Forms extends React.Component {
 
       this.props.showValue(true);
     }
-    console.log(this.state.show);
   };
+
 
   render() {
     return (

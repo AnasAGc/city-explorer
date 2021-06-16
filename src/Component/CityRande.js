@@ -22,8 +22,8 @@ class CityRande extends React.Component {
         <Figure>
           {this.props.mapShowValue && (
             <Figure.Image
-              width={400}
-              height={400}
+              width={500}
+              height={500}
               alt="171x180"
               src={`https://maps.locationiq.com/v3/staticmap?key=pk.43fed3791d35ddb76aa14f749c6d3080&center=${this.props.cityData.lat},${this.props.cityData.lon} `}
             />

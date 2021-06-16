@@ -3,7 +3,6 @@ import Forms from "./Component/Forms";
 import CityRande from "./Component/CityRande";
 import Weather from "./Component/Weather";
 import Movies from "./Component/Movies";
-import Figure from 'react-bootstrap/Figure'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -37,7 +36,7 @@ updatMovies=(update)=>{
     this.setState({
       moviesData:update
     })
-    // console.log(update);
+    console.log(this.state.showFlage);
   }
   
   
@@ -46,8 +45,10 @@ updatMovies=(update)=>{
     return (
       <div  >
         <Forms moviesFunction={this.updatMovies} weatherFunction={this.updatWeather} showValue={this.show} update={this.updateData} />
+        <div className={'down_header'} >
         <CityRande mapShowValue={this.state.showFlage} cityData={this.state.cityData} />
-        <Weather cityWatherData={this.state.weatherData} />
+        <Weather show={this.state.showFlage} cityWatherData={this.state.weatherData} />
+        </div>
         <Movies data={this.state.moviesData} />
 
 

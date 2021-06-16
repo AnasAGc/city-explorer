@@ -7,7 +7,7 @@ class Weather extends React.Component{
 
     render(){
         return(
-            < WeatherDay cityWatherData={this.props.cityWatherData}/>
+            < WeatherDay show={this.props.show} cityWatherData={this.props.cityWatherData}/>
         )
     }
 }

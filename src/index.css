@@ -13,4 +13,23 @@ code {
 }
 
 
+.down_header{
+  display: flex;
+  flex-direction: row;
+}
+.cityInfoComponent{
+ 
+}
+.table_weather{
+  
+  flex-shrink: 1;
 
+}
+
+
+/* 
+.table_weather{
+  position: absolute;
+  text-align: center;
+  top:0;
+} */
