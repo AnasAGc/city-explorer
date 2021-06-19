@@ -8,7 +8,6 @@ class Movie extends React.Component {
         {this.props.data.map((item, inx) => {
           return (
             <div key={inx}>
-              {console.log(item)}
               {/* {<p> {item.title} </p>}
               {<p> {item.overview}</p>}
               {<p> {item.averageVotes}</p>}
