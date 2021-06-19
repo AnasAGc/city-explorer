@@ -3,63 +3,65 @@ import Forms from "./Component/Forms";
 import CityRande from "./Component/CityRande";
 import Weather from "./Component/Weather";
 import Movies from "./Component/Movies";
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       cityData: "",
-      showFlage:false,
-      weatherData:[],
-      moviesData:[],
+      showFlage: false,
+      weatherData: [],
+      moviesData: [],
     };
   }
   updateData = (newCityData) => {
     this.setState({
       cityData: newCityData,
     });
+    console.log(newCityData);
   };
-  show=(showValue)=>{
+  show = (showValue) => {
     this.setState({
-      showFlage:!showValue
-    })
-  }
-  updatWeather=(weatherData)=>{
+      showFlage: !showValue,
+    });
+  };
+  updatWeather = (weatherData) => {
     this.setState({
-      weatherData:weatherData
-    })
-  }
+      weatherData: weatherData,
+    });
+  };
 
-updatMovies=(update)=>{
+  updatMovies = (update) => {
     this.setState({
-      moviesData:update
-    })
-    console.log(this.state.showFlage);
-  }
-  
-  
+      moviesData: update,
+    });
+  };
 
   render() {
     return (
-      <div  >
-        <Forms moviesFunction={this.updatMovies} weatherFunction={this.updatWeather} showValue={this.show} update={this.updateData} />
-        <div className={'down_header'} >
-        <CityRande mapShowValue={this.state.showFlage} cityData={this.state.cityData} />
-        <Weather show={this.state.showFlage} cityWatherData={this.state.weatherData} />
+      <div>
+        <h1 > City Explorer</h1>
+        <Forms
+          moviesFunction={this.updatMovies}
+          weatherFunction={this.updatWeather}
+          showValue={this.show}
+          update={this.updateData}
+        />
+        <div className={"down_header"}>
+          <CityRande
+            mapShowValue={this.state.showFlage}
+            a={this.state.cityData}
+          />
+          <Weather
+            show={this.state.showFlage}
+            cityWatherData={this.state.weatherData}
+          />
         </div>
         <Movies data={this.state.moviesData} />
-
-
-            </div>
-
+      </div>
     );
   }
 }
 
 export default App;
-
-
-
-

@@ -26,7 +26,11 @@ code {
   flex-shrink: 10;
 
 }
-
+h1{
+  text-align: center;
+  margin: 20px;
+  padding: 30px;
+}
 
 /* 
 .table_weather{
